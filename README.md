@@ -2,6 +2,6 @@
 
 ## Dependencies
 
-* [parsemarc](https://github.com/domainaware/parsedmarc)
+* [parsedmarc](https://github.com/domainaware/parsedmarc)
 * ElasticSearch
 * Kibana

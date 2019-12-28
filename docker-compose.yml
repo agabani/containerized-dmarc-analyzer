@@ -1,9 +1,9 @@
 version: "3.7"
 
 services: 
-    parsemarc:
+    parsedmarc:
         build:
-            context: parsemarc/
+            context: parsedmarc/
             dockerfile: Dockerfile
         environment:
             - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
@@ -12,7 +12,7 @@ services:
             - ELASTICSEARCH_NUMBER_OF_REPLICAS=1
             - IMAP_HOST=imap.***.com
             - IMAP_USERNAME=***@***.com
-            - IMAP_PASSWORD=***            
+            - IMAP_PASSWORD=***
             - IMAP_PORT=993
         restart: always
     elasticsearch:
