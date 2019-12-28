@@ -1,0 +1,23 @@
+version: "3.7"
+
+services: 
+    parsemarc:
+        build:
+            context: parsemarc/
+            dockerfile: Dockerfile
+        environment:
+            - ELASTICSEARCH_HOST=http://elasticsearch:9200
+        restart: always
+    elasticsearch:
+        image: elasticsearch:7.5.1
+        environment: 
+            - discovery.type=single-node
+        ports: 
+            - 9200:9200
+            - 9300:9300
+    kibana:
+        image: kibana:7.5.1
+        environment:
+            - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+        ports:
+            - 5601:5601
