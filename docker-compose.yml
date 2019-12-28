@@ -6,7 +6,14 @@ services:
             context: parsemarc/
             dockerfile: Dockerfile
         environment:
-            - ELASTICSEARCH_HOST=http://elasticsearch:9200
+            - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+            - ELASTICSEARCH_SSL=False
+            - ELASTICSEARCH_NUMBER_OF_SHARDS=1
+            - ELASTICSEARCH_NUMBER_OF_REPLICAS=1
+            - IMAP_HOST=imap.***.com
+            - IMAP_USERNAME=***@***.com
+            - IMAP_PASSWORD=***            
+            - IMAP_PORT=993
         restart: always
     elasticsearch:
         image: elasticsearch:7.5.1
