@@ -1,0 +1,9 @@
+.git/
+.dockerignore
+.editorconfig
+.gitignore
+.gitattributes
+docker-compose.yml
+LICENSE
+README.md
+**/Dockerfile
